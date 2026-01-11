@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Stars Canvas */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+/* Moon */
+.moon {
+  position: fixed;
+  top: 80px;
+  right: 100px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff, #ddd, #aaa);
+  box-shadow:
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 60px rgba(255,255,255,0.3),
+    0 0 120px rgba(255,255,255,0.1);
+  z-index: -1;
+  animation: floatMoon 6s ease-in-out infinite;
+}
+
+@keyframes floatMoon {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.nav-links a {
+  color: #aaa;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Sections */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Hero */
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  color: #aaa;
+  line-height: 1.6;
+}
+
+/* Skills */
+.skills {
+  align-items: flex-start;
+  text-align: left;
+  max-width: 600px;
+  margin: auto;
+}
+
+.skills p {
+  color: #777;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.skill-btn {
+  background: #0d0d0d;
+  border: 1px solid #333;
+  color: #ddd;
+  padding: 12px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: default;
+  transition: 0.3s;
+  border-radius: 6px;
+}
+
+.skill-btn i {
+  font-size: 18px;
+  color: #00bfff;
+}
+
+.skill-btn:hover {
+  background: white;
+  color: black;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(255,255,255,0.2);
+}
+
+.skill-btn:hover i {
+  color: black;
+}
+
+/* Connect */
+.connect {
+  background: rgba(0,0,0,0.4);
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-links a {
+  color: #00bfff;
+  text-decoration: none;
+  font-size: 16px;
+  border: 1px solid #333;
+  padding: 10px;
+  width: 250px;
+  transition: 0.3s;
+}
+
+.contact-links a:hover {
+  background: white;
+  color: black;
+}
+
+/* Light Mode */
+body.light {
+  background: #f5f5f5;
+  color: black;
+}
